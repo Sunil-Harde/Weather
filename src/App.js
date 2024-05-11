@@ -2,7 +2,7 @@ import { React, useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faLocation, faClock, faDroplet, faWind, faFlag } from '@fortawesome/free-solid-svg-icons';
-
+import './App.css'
 
 
 function App() {
@@ -77,13 +77,13 @@ function App() {
 
 
   return (
-    <div className='hii mt-5 mt-md-0'>
+    <div className='main mt-5 mt-md-0'>
 
       <div className='d-flex flex-column justify-content-center align-items-center vh-100'>
-        <div className='d-flex justify-content-center align-items-center mb-3'>
+        <div className='d-flex search justify-content-center align-items-center mb-3'>
 
 
-          <input type="text" className='rounded-pill p-1 ms-5 text-center text-capitalize fs-3'
+          <input type="text" className='rounded-pill p-1 ms-5 ms-sm-0 text-center text-capitalize fs-3'
             onChange={(e) => setLocation(e.target.value)} value={location}
             onKeyDown={enter}
             placeholder='Enter City Name'
@@ -92,7 +92,7 @@ function App() {
 
 
           <FontAwesomeIcon icon={faSearch}
-            className='fs-1 ms-2 pe-auto cur mt-1 btn' role="button" style={{ marginLeft: "435px" }}
+            className='fasearch  fs-1 ms-2 pe-auto cur mt-1 btn ' role="button" style={{ marginLeft: "435px" }}
             onClick={click}
           />
 
@@ -104,12 +104,12 @@ function App() {
 
             <>
 
-              <div className='card  m-2' style={{ background: "skyblue" }}>
+              <div className='card card1  m-2' style={{ background: "skyblue" }}>
 
                 <div className="card-header">
                   <div className='d-flex align-items-center '>
 
-                    <FontAwesomeIcon icon={faLocation} className='fs-4' />
+                    <FontAwesomeIcon icon={faLocation} className='fs-2' />
                     {/* <FontAwesomeIcon icon="fa-regular fa-clock" />                   */}
                     <h4 className='mt-2 ms-4 '>{apiData.location.name}, {apiData.location.region}, {apiData.location.country}</h4>
 
@@ -132,7 +132,7 @@ function App() {
 
                 <div className="card-footer">
                   <div className='d-flex align-items-center '>
-                    <FontAwesomeIcon icon={faClock} className='fs-4' />
+                    <FontAwesomeIcon icon={faClock} className='fs-2' />
                     <h4 className='mt-2 ms-4 '>{apiData.location.localtime} </h4>
                   </div>
                 </div>
@@ -150,7 +150,7 @@ function App() {
                       </div>
 
                       <div className='card-body d-flex justify-content-between align-items-center'>
-                        <FontAwesomeIcon icon={faDroplet} />
+                        <FontAwesomeIcon icon={faDroplet} className='fs-2' />
                         <h2>{apiData.current.humidity}%</h2>
                       </div>
                     </div>
@@ -163,7 +163,7 @@ function App() {
                       </div>
 
                       <div className='card-body d-flex justify-content-between align-items-center'>
-                        <FontAwesomeIcon icon={faWind} />
+                        <FontAwesomeIcon icon={faWind} className='fs-2' />
                         <h2>{apiData.current.wind_kph} kph</h2>
                       </div>
                     </div>
@@ -176,7 +176,7 @@ function App() {
                       </div>
 
                       <div className='card-body d-flex justify-content-between align-items-center'>
-                        <FontAwesomeIcon icon={faFlag} />
+                        <FontAwesomeIcon icon={faFlag}  className='fs-2'/>
                         <h2>{apiData.current.wind_dir}</h2>
                       </div>
                     </div>
@@ -189,7 +189,7 @@ function App() {
                       </div>
 
                       <div className='card-body d-flex justify-content-between align-items-center'>
-                      <img className='fs-1' style={{height:"50px",width:"40px"}} src="https://static.thenounproject.com/png/3257259-200.png" alt="" />
+                      <img className='fs-1' style={{height:"60px",width:"40px"}} src="https://static.thenounproject.com/png/3257259-200.png" alt="" />
 
                         <h2>{apiData.current.pressure_mb}mb</h2>
                       </div>
