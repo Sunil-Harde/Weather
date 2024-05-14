@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faLocation, faClock, faDroplet, faWind, faFlag } from '@fortawesome/free-solid-svg-icons';
 import airper from './png/icons8-atmospheric-pressure-64.png'
-import  Patchylightdrizzle from './Video/Partly Cloudy.mp4'
+import Patchylightdrizzle from './Video/Partly Cloudy.mp4'
 import './App.css'
 
 
@@ -82,8 +82,8 @@ function App() {
 
 
     <div className='main mt-5 mt-md-0 '>
-      <video autoPlay loop muted >
-        <source src={Patchylightdrizzle} type='video/mp4'/>
+      <video autoPlay loop muted  >
+        <source src={Patchylightdrizzle} type='video/mp4' />
       </video>
       <div className='d-flex flex-column justify-content-center align-items-center mt-md-5'>
         <div className='d-flex search justify-content-center align-items-center mb-3'>
@@ -98,7 +98,7 @@ function App() {
 
 
           <FontAwesomeIcon icon={faSearch}
-            className='fasearch fs-1 ms-2 mt-1 btn ' role="button" style={{ }}
+            className='fasearch fs-1 ms-2 mt-1 btn ' role="button" style={{}}
             onClick={click}
           />
 
@@ -194,7 +194,7 @@ function App() {
                       </div>
 
                       <div className='card-body d-flex justify-content-between align-items-center'>
-                        <img className='fs-1' style={{ height: "40px", width: "40px", color:"white" }} src={airper} alt="" />
+                        <img className='fs-1' style={{ height: "40px", width: "40px", color: "white" }} src={airper} alt="" />
 
                         <h2>{apiData.current.pressure_mb}mb</h2>
                       </div>
