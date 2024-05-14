@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faLocation, faClock, faDroplet, faWind, faFlag } from '@fortawesome/free-solid-svg-icons';
 import airper from './png/icons8-atmospheric-pressure-64.png'
-import Patchylightdrizzle from './Video/Partly Cloudy.mp4'
+import Patchylightdrizzle from './Video/Patchy light drizzle.mp4'
 import './App.css'
 
 
@@ -15,76 +15,73 @@ function App() {
 
   var search;
 
+
+
+  const api = () => fetch(`https://api.weatherapi.com/v1/current.json?key=775607beac01499d9b9130530240205&q=${search}&aqi=no`)
+    .then((res) => {
+      res.json()
+        .then((result) => {
+          setApiData(result)
+        })
+    })
+
+  useEffect(() => {
+    api();
+    getBackgroundVideoSource("Sunny");
+    
+  }, [])
+
   if (!location) {
-    search = "pune"
-
-    fetch(`https://api.weatherapi.com/v1/current.json?key=775607beac01499d9b9130530240205&q=${search}&aqi=no`)
-
-      .then((Response) => {
-        Response.json()
-
-          .then((result) => {
-            setApiData(result)
-          })
-
-      })
-
+    search = "latur"
   }
 
   else {
     search = location
   }
 
-
   const enter = (event) => {
-
-    if (event.key === "Enter" || !location) {
-
-      fetch(`https://api.weatherapi.com/v1/current.json?key=775607beac01499d9b9130530240205&q=${search}&aqi=no`)
-
-        .then((Response) => {
-          Response.json()
-
-            .then((result) => {
-              setApiData(result)
-            })
-
-        })
-
+    if (event.key === "Enter") {
+      api();
+      getBackgroundVideoSource();
+      getBackgroundVideoSource(apiData.current.condition.text)
+      console.log(getBackgroundVideoSource(apiData.current.condition.text));
     }
   }
 
-
   const click = () => {
-
-    fetch(`https://api.weatherapi.com/v1/current.json?key=775607beac01499d9b9130530240205&q=${search}&aqi=no`)
-
-      .then((Response) => {
-        Response.json()
-
-          .then((result) => {
-            setApiData(result)
-          })
-
-      })
+    api();
+    getBackgroundVideoSource(apiData.current.condition.text)
+    console.log(getBackgroundVideoSource(apiData.current.condition.text));
   }
 
 
 
+  const weatherConditionVideos = {
+    'Sunny': "https://cdn.pixabay.com/video/2021/03/03/66810-520427372_tiny.mp4",
+    'Patchy rain nearby': Patchylightdrizzle,
+    'Rainy': "https://cdn.pixabay.com/video/2019/10/24/28236-368501609_tiny.mp4",
+    'Partly cloudy': "xxx"
+  };
 
-  console.log(apiData);
 
-  console.log(location);
-
+  const getBackgroundVideoSource = (conditionText) => {
+    return weatherConditionVideos[conditionText] || 'default-video-source.mp4';
+  };
 
 
   return (
 
 
     <div className='main mt-5 mt-md-0 '>
-      <video autoPlay loop muted  >
-        <source src={Patchylightdrizzle} type='video/mp4' />
-      </video>
+
+      <div className='video-background'>
+        {apiData && (
+          <video autoPlay loop muted>
+            <source src={getBackgroundVideoSource(apiData.current.condition.text)} type='video/mp4' />
+          </video>
+        )}
+      </div>
+
       <div className='d-flex flex-column justify-content-center align-items-center mt-md-5'>
         <div className='d-flex search justify-content-center align-items-center mb-3'>
 
@@ -110,7 +107,7 @@ function App() {
 
             <>
 
-              <div className='card card1  m-2 mb-md-5' >
+              <div className='card card1  m-2 mb-5' >
 
                 <div className="card-header">
                   <div className='d-flex align-items-center '>
