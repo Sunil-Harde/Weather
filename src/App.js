@@ -28,11 +28,11 @@ function App() {
   useEffect(() => {
     api();
     getBackgroundVideoSource("Sunny");
-    
+
   }, [])
 
   if (!location) {
-    search = "latur"
+    search = "pune"
   }
 
   else {
@@ -55,9 +55,9 @@ function App() {
   }
 
 
-
   const weatherConditionVideos = {
     'Sunny': "https://cdn.pixabay.com/video/2021/03/03/66810-520427372_tiny.mp4",
+    'Clear': "https://cdn.pixabay.com/video/2021/03/03/66810-520427372_tiny.mp4",
     'Patchy rain nearby': Patchylightdrizzle,
     'Rainy': "https://cdn.pixabay.com/video/2019/10/24/28236-368501609_tiny.mp4",
     'Partly cloudy': "xxx"
@@ -72,7 +72,7 @@ function App() {
   return (
 
 
-    <div className='main mt-5 mt-md-0 '>
+    <div className='main '>
 
       <div className='video-background'>
         {apiData && (
@@ -82,20 +82,20 @@ function App() {
         )}
       </div>
 
-      <div className='d-flex flex-column justify-content-center align-items-center mt-md-5'>
-        <div className='d-flex search justify-content-center align-items-center mb-3'>
-
-
-          <input type="text" className='rounded-pill p-1 ms-md-5  text-center text-capitalize fs-3'
+      <div className='d-flex flex-column bg-transparent justify-content-center align-items-center mt-4'>
+        <div className='d-flex search  align-items-center mb-3 rounded-5  ' >
+          
+          <input type="text" className='rounded-5 py-2 text-capitalize fs-3 bg-transparent ms-4 '
+            style={{ outline: "none", border:"0", width:"10rem", marginLeft:'1rem' }}
             onChange={(e) => setLocation(e.target.value)} value={location}
             onKeyDown={enter}
-            placeholder='Enter City Name'
+            placeholder='City Name'
           />
 
 
 
           <FontAwesomeIcon icon={faSearch}
-            className='fasearch fs-1 ms-2 mt-1 btn ' role="button" style={{}}
+            className='fasearch fs-2 mt-1 ' role="button"
             onClick={click}
           />
 
@@ -107,7 +107,7 @@ function App() {
 
             <>
 
-              <div className='card card1  m-2 mb-5' >
+              <div className='card card1  m-2 mb-5 rounded-5 -5' >
 
                 <div className="card-header">
                   <div className='d-flex align-items-center '>
@@ -119,16 +119,15 @@ function App() {
 
                 </div>
 
-                <div className='card-body  ' >
-                  <div className='d-flex align-items-center justify-content-between '>
-
-                    <h3 className='ms-2'> C : {apiData.current.temp_c}°</h3>
-                    <h3 className='me-2'>F : {apiData.current.temp_f}</h3>
+                <div className='card-body  row' >
+                  <div className='col-6'>
+                    <h1 className='ms-2 mt-5 cell '> {apiData.current.temp_c}°</h1>
+                    {/* <h3 className='me-2'>F : {apiData.current.temp_f}</h3> */}
                   </div>
 
-                  <div className='d-flex align-items-center justify-content-between '>
-                    <img src={apiData.current.condition.icon} alt="Weather Icon" className='ms-3' />
-                    <h5 className='me-4 mt-2'> {apiData.current.condition.text}</h5>
+                  <div className='col-6 '>
+                    <img src={apiData.current.condition.icon} alt="Weather Icon" className='ms-4 h-50 w-50 ' style={{marginTop:"-1rem", marginBottom:"-2rem" }}/>
+                    <h2 className='ms-4 mt-5' style={{marginBottom:"-1rem" }}> {apiData.current.condition.text}</h2>
                   </div>
                 </div>
 
@@ -146,7 +145,7 @@ function App() {
                 <div className='row'>
 
                   <div className='col-sm-6 col-lg-3 mt-2 mb-3 '>
-                    <div className="card rounded " >
+                    <div className="card rounded-5  " >
                       <div className="card-header text-center">
                         <h4>Humidity</h4>
                       </div>
@@ -159,7 +158,7 @@ function App() {
                   </div>
 
                   <div className='col-sm-6 col-lg-3 mt-2 mb-3 '>
-                    <div className="card rounded " >
+                    <div className="card rounded-5  " >
                       <div className="card-header text-center">
                         <h4>Wind</h4>
                       </div>
@@ -172,7 +171,7 @@ function App() {
                   </div>
 
                   <div className='col-sm-6 col-lg-3 mt-2 mb-3 '>
-                    <div className="card rounded " >
+                    <div className="card rounded-5  " >
                       <div className="card-header text-center">
                         <h4>Wind Direction</h4>
                       </div>
@@ -185,7 +184,7 @@ function App() {
                   </div>
 
                   <div className='col-sm-6 col-lg-3 mt-2 mb-3 '>
-                    <div className="card rounded " >
+                    <div className="card rounded-5  " >
                       <div className="card-header text-center">
                         <h4>Air Pressure</h4>
                       </div>

@@ -23,15 +23,29 @@ img {
   transform: translate(-50%, -50%);
 }
 
-.card,
-input {
+.search{
+  background: rgba(0, 0, 0, 0.548);
+  backdrop-filter: blur(50px);
+  width:22rem;
+}
+
+.fasearch {
+  margin-left: 7.5rem;
+}
+
+.card {
   background: rgba(0, 0, 0, 0.548);
   backdrop-filter: blur(50px);
   color: white;
+  box-shadow: 5px 5px 10px black ;
 }
 
 .card1{
   max-width:500px
+}
+
+.cell{
+  font-size: 3rem;
 }
 
 video {
@@ -39,15 +53,20 @@ video {
 }
 
 
-@media (max-width:775px) {
-  input {
-    margin-left: 60px;
-  }
-
-}
-
 @media (max-width:575px) {
 
+  .card1{
+    max-width:420px
+  }
+
+  .search{
+    width: 18rem;
+  }
+
+  .fasearch {
+    margin-left:4rem;
+  }
+  
   .row .col-lg-3 {
     display: flex;
     justify-content: center;
@@ -59,32 +78,19 @@ video {
   }
 }
 
-@media (max-width:400px) {
+@media (max-width:320px) {
 
-
-  input {
-    margin-left: -1px;
-    text-align: left;
-
-  }
-
-  .fasearch {
-    position: absolute;
-    right: 50px;
-  }
-
-}
-
-@media (max-width:360px) {
-
-  .fasearch {
-    right: 40px;
+  .cell{
+    font-size: 2rem;
   }
 }
 
-@media (max-width:340px) {
+@media (max-width:290px) {
 
+  .search{
+    width: 15rem;
+  }
   .fasearch {
-    right: 30px;
+    margin-left:1rem;
   }
 }
