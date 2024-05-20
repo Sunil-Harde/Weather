@@ -29,8 +29,11 @@ img {
   width:22rem;
 }
 
+input{
+  width: 15rem;
+}
 .fasearch {
-  margin-left: 7.5rem;
+  margin-left: 2.5rem;
 }
 
 .card {
@@ -63,8 +66,12 @@ video {
     width: 18rem;
   }
 
+  input{
+    width: 13rem;
+  }
+
   .fasearch {
-    margin-left:4rem;
+    margin-left:1rem;
   }
   
   .row .col-lg-3 {
@@ -89,7 +96,12 @@ video {
 
   .search{
     width: 15rem;
+  } 
+  
+  input{
+    width: 10rem;
   }
+
   .fasearch {
     margin-left:1rem;
   }
