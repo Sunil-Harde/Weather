@@ -122,13 +122,13 @@ function App() {
 
                   <div className='card-body  row' >
                     <div className='col-6'>
-                      <h1 className='ms-2 mt-5 cell '> {apiData.current.temp_c}°</h1>
+                      <h1 className='ms-2 mt-4 cell '> {apiData.current.temp_c}°</h1>
                       {/* <h3 className='me-2'>F : {apiData.current.temp_f}</h3> */}
                     </div>
 
                     <div className='col-6 '>
                       <img src={apiData.current.condition.icon} alt="Weather Icon" className='ms-4 h-50 w-50 ' style={{ marginTop: "-1rem", marginBottom: "-2rem" }} />
-                      <h2 className='ms-4 mt-5' style={{ marginBottom: "-1rem" }}> {apiData.current.condition.text}</h2>
+                      <h2 className='ms-4 mt-5' > {apiData.current.condition.text}</h2>
                     </div>
                   </div>
 
