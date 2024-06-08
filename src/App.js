@@ -158,7 +158,7 @@ function App() {
                           <h4 className="wow animate__backInLeft " data-wow-duration="1.3s" >Humidity</h4>
                         </div>
 
-                        <div className='card-body d-flex justify-content-between align-items-center wow animate__backInLeft ' data-wow-duration="1.5s" data-wow-delay="0s" data-wow-offset="0">
+                        <div className='card-body d-flex justify-content-between align-items-center wow animate__backInLeft ' data-wow-duration="1.8s" data-wow-delay="0s" data-wow-offset="0">
                           <FontAwesomeIcon icon={faDroplet} className='fs-2' />
                           <h2>{apiData.current.humidity}%</h2>
                         </div>
@@ -166,12 +166,12 @@ function App() {
                     </div>
 
                     <div className='col-sm-6 col-lg-3 mt-2 mb-3 '>
-                      <div className="card rounded-5  wow animate__backInLeft" data-wow-duration="1s" data-wow-delay="0s" data-wow-offset="0" >
+                      <div className="card rounded-5  wow animate__backInLeft" data-wow-duration="1.5s" data-wow-delay="0s" data-wow-offset="0" >
                         <div className="card-header text-center">
                           <h4 className="wow animate__backInLeft " data-wow-duration="1.3s" >Wind</h4>
                         </div>
 
-                        <div className='card-body d-flex justify-content-between align-items-center wow animate__backInLeft ' data-wow-duration="1.5s" data-wow-delay="0s" data-wow-offset="0">
+                        <div className='card-body d-flex justify-content-between align-items-center wow animate__backInLeft ' data-wow-duration="2s" data-wow-delay="0s" data-wow-offset="0">
                           <FontAwesomeIcon icon={faWind} className='fs-2' />
                           <h2>{apiData.current.wind_kph} kph</h2>
                         </div>
@@ -179,13 +179,13 @@ function App() {
                     </div>
 
                     <div className='col-sm-6 col-lg-3 mt-2 mb-3 '>
-                      <div className="card rounded-5  wow animate__backInRight" data-wow-duration="1s" data-wow-delay="0s" data-wow-offset="0" >
+                      <div className="card rounded-5  wow animate__backInRight" data-wow-duration="1.5s" data-wow-delay="0s" data-wow-offset="0" >
                         <div className="card-header text-center">
                           <h4 className="wow animate__backInLeft " data-wow-duration="1.3s" >Wind Direction</h4>
 
                         </div>
 
-                        <div className='card-body d-flex justify-content-between align-items-center wow animate__backInLeft ' data-wow-duration="1.5s" data-wow-delay="0s" data-wow-offset="0">
+                        <div className='card-body d-flex justify-content-between align-items-center wow animate__backInRight ' data-wow-duration="1.8s" data-wow-delay="0s" data-wow-offset="0">
                           <FontAwesomeIcon icon={faFlag} className='fs-2' />
                           <h2>{apiData.current.wind_dir}</h2>
                         </div>
@@ -198,7 +198,7 @@ function App() {
                           <h4 className="wow animate__backInLeft " data-wow-duration="1.3s" >Air Pressure</h4>
                         </div>
 
-                        <div className='card-body d-flex justify-content-between align-items-center'>
+                        <div className='card-body d-flex justify-content-between align-items-center wow animate__backInRight ' data-wow-duration="2s" data-wow-delay="0s" data-wow-offset="0">
                           <img className='fs-1' style={{ height: "40px", width: "40px", color: "white" }} src={airper} alt="" />
 
                           <h2>{apiData.current.pressure_mb}mb</h2>
