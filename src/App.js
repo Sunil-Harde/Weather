@@ -167,7 +167,7 @@ function App() {
                     </div>
 
                     <div className='col-sm-6 col-lg-3 mt-2 mb-3 '>
-                      <div className="card rounded-5  "data-aos="fade-right" data-aos-duration="1200" data-aos-delay="500">
+                      <div className="card rounded-5  "data-aos="fade-right" data-aos-duration="1200" data-aos-delay="50">
                         <div className="card-header text-center">
                           <h4 data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1200">Wind</h4>
                         </div>
@@ -195,7 +195,7 @@ function App() {
                     <div className='col-sm-6 col-lg-3 mt-2 mb-3 '>
                       <div className="card rounded-5  " data-aos="fade-left" data-aos-duration="1500">
                         <div className="card-header text-center" >
-                          <h4  data-aos-duration="1500">Air Pressure</h4>
+                          <h4 data-aos="fade-left" data-aos-duration="1500">Air Pressure</h4>
                         </div>
 
                         <div className='card-body d-flex justify-content-between align-items-center'>
