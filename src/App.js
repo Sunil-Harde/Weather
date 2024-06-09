@@ -31,8 +31,6 @@ function App() {
   useEffect(() => {
     AOS.init({
       once: true,
-      disable: "phone",
-      duration: 700,
       easing: "ease-out-cubic",
     });
     api();
@@ -83,6 +81,7 @@ function App() {
 
 
     <div className=' '>
+      
       <div className='main'>
 
         <div className='video-background'>
@@ -93,7 +92,7 @@ function App() {
           )}
         </div>
 
-        <div className='d-flex flex-column bg-transparent justify-content-center align-items-center mt-4'>
+        <div className='d-flex flex-column bg-transparent justify-content-center align-items-center mt-2'>
           <div className='d-flex search  align-items-center mb-3 rounded-5  ' >
 
             <input type="text" className='rounded-5 py-2 text-capitalize fs-3 bg-transparent ms-4 '
@@ -121,7 +120,7 @@ function App() {
                 <div className='card card1  m-2 mb-5 rounded-5 -5' data-aos="fade-down" data-aos-easing="linear">
 
                   <div className="card-header"  >
-                    <div className='d-flex align-items-center ' data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1800">
+                    <div className='d-flex align-items-center ' data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
 
                       <FontAwesomeIcon icon={faLocation} className='fs-2' />
                       <h4 className='mt-2 ms-4 '>{apiData.location.name}, {apiData.location.region}, {apiData.location.country}</h4>
@@ -130,7 +129,7 @@ function App() {
 
                   </div>
 
-                  <div className='card-body  row' data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                  <div className='card-body  row' data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
                     <div className='col-6' >
                       <h1 className='ms-2 mt-5 cell '> {apiData.current.temp_c}°</h1>
                       {/* <h3 className='me-2'>F : {apiData.current.temp_f}</h3> */}
@@ -143,7 +142,7 @@ function App() {
                   </div>
 
                   <div className="card-footer">
-                    <div className='d-flex align-items-center ' data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
+                    <div className='d-flex align-items-center ' data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1400">
                       <FontAwesomeIcon icon={faClock} className='fs-2' />
                       <h4 className='mt-2 ms-4 '>{apiData.location.localtime} </h4>
                     </div>
@@ -171,33 +170,33 @@ function App() {
                     <div className='col-sm-6 col-lg-3 mt-2 mb-3 '>
                       <div className="card rounded-5  "data-aos="fade-right" data-aos-duration="1000" >
                         <div className="card-header text-center">
-                          <h4>Wind</h4>
+                          <h4 data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000">Wind</h4>
                         </div>
 
                         <div className='card-body d-flex justify-content-between align-items-center'>
-                          <FontAwesomeIcon icon={faWind} className='fs-2' data-aos="fade-right" data-aos-duration="1200"/>
+                          <FontAwesomeIcon icon={faWind} className='fs-2' data-aos="fade-right" data-aos-duration="1000"/>
                           <h2>{apiData.current.wind_kph} kph</h2>
                         </div>
                       </div>
                     </div>
 
                     <div className='col-sm-6 col-lg-3 mt-2 mb-3 '>
-                      <div className="card rounded-5  " >
-                        <div className="card-header text-center">
+                      <div className="card rounded-5  " data-aos="fade-left" data-aos-duration="1000" >
+                        <div className="card-header text-center" data-aos="fade-left" data-aos-duration="1200">
                           <h4>Wind Direction</h4>
                         </div>
 
                         <div className='card-body d-flex justify-content-between align-items-center'>
-                          <FontAwesomeIcon icon={faFlag} className='fs-2' />
-                          <h2>{apiData.current.wind_dir}</h2>
+                          <FontAwesomeIcon icon={faFlag} className='fs-2' data-aos="fade-left" data-aos-duration="1200"/>
+                          <h2 >{apiData.current.wind_dir}</h2>
                         </div>
                       </div>
                     </div>
 
                     <div className='col-sm-6 col-lg-3 mt-2 mb-3 '>
-                      <div className="card rounded-5  " >
-                        <div className="card-header text-center">
-                          <h4>Air Pressure</h4>
+                      <div className="card rounded-5  " data-aos="fade-left" data-aos-duration="1500">
+                        <div className="card-header text-center" >
+                          <h4  data-aos-duration="1500">Air Pressure</h4>
                         </div>
 
                         <div className='card-body d-flex justify-content-between align-items-center'>
