@@ -30,7 +30,6 @@ function App() {
 
   useEffect(() => {
     AOS.init({
-      once: true,
       easing: "ease-out-cubic",
     });
     api();
@@ -117,7 +116,7 @@ function App() {
 
               <>
 
-                <div className='card card1  m-2 mb-5 rounded-5 -5' data-aos="fade-down" data-aos-easing="linear">
+                <div className='card card1  m-2 rounded-5' data-aos="fade-down" data-aos-easing="linear">
 
                   <div className="card-header"  >
                     <div className='d-flex align-items-center ' data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
@@ -154,13 +153,13 @@ function App() {
                 <div className='container'>
                   <div className='row'>
 
-                    <div className='col-sm-6 col-lg-3 mt-2 mb-3 '>
+                    <div className='col-sm-6 col-lg-3  mb-3 '>
                       <div className="card rounded-5" data-aos="fade-right"   data-aos-duration="1500">
                         <div className="card-header text-center" data-aos="fade-right" data-aos-easing="" data-aos-duration="1700">
                           <h4>Humidity</h4>
                         </div>
 
-                        <div className='card-body d-flex justify-content-between align-items-center' >
+                        <div className='card-body d-flex justify-content-between align-items-center'  >
                           <FontAwesomeIcon icon={faDroplet} className='fs-2' data-aos="fade-right" data-aos-duration="1700" />
                           <h2 data-aos="" data-aos-duration="">{apiData.current.humidity}%</h2>
                         </div>
@@ -168,13 +167,13 @@ function App() {
                     </div>
 
                     <div className='col-sm-6 col-lg-3 mt-2 mb-3 '>
-                      <div className="card rounded-5  "data-aos="fade-right" data-aos-duration="1000" >
+                      <div className="card rounded-5  "data-aos="fade-right" data-aos-duration="1200" data-aos-delay="2000">
                         <div className="card-header text-center">
-                          <h4 data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000">Wind</h4>
+                          <h4 data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1200">Wind</h4>
                         </div>
 
                         <div className='card-body d-flex justify-content-between align-items-center'>
-                          <FontAwesomeIcon icon={faWind} className='fs-2' data-aos="fade-right" data-aos-duration="1000"/>
+                          <FontAwesomeIcon icon={faWind} className='fs-2' data-aos="fade-right" data-aos-duration="1200"/>
                           <h2>{apiData.current.wind_kph} kph</h2>
                         </div>
                       </div>
