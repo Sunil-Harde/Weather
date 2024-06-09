@@ -4,6 +4,10 @@
 img {
   color: white;
 }
+
+.main{
+  overflow-x: hidden;
+}
 .video-background {
   position: fixed;
   top: 0;
