@@ -44,7 +44,7 @@ function App() {
   };
 
   const updateVideoSource = (conditionText) => {
-    const videoUrl = weatherConditionVideos[conditionText] || 'https://cdn.pixabay.com/video/2019/10/24/28236-368501609_tiny.mp4';
+    const videoUrl = weatherConditionVideos[conditionText] || 'https://cdn.pixabay.com/video/2023/10/26/186588-878455871_tiny.mp4';
     setVideoSource(videoUrl);
     setVideoKey(videoKey + 1);
   };
