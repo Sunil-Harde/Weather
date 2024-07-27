@@ -1,4 +1,4 @@
-*,
+
 .main,
 .card,
 img {
@@ -17,6 +17,8 @@ img {
   overflow: hidden;
   z-index: -1;
 }
+
+
 
 .video-background video {
   min-width: 100%;
