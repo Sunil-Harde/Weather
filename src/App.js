@@ -1,19 +1,21 @@
-import { React, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faLocation, faClock, faDroplet, faWind, faFlag } from '@fortawesome/free-solid-svg-icons';
-import airper from './png/icons8-atmospheric-pressure-64.png'
-import Patchylightdrizzle from './Video/Patchy light drizzle.mp4'
+import { faTimes, faSearch, faLocation, faClock, faDroplet, faWind, faFlag } from '@fortawesome/free-solid-svg-icons';
+import airper from './png/icons8-atmospheric-pressure-64.png';
+import Patchylightdrizzle from './Video/Patchy light drizzle.mp4';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import './App.css'
+import './App.css';
 
 const weatherConditionVideos = {
   'Sunny': 'https://cdn.pixabay.com/video/2016/08/22/4753-179739298_large.mp4',
   'Clear': 'https://cdn.pixabay.com/video/2023/03/04/153167-817186036_tiny.mp4',
-  'Patchy rain nearby': Patchylightdrizzle,
   'Rainy': 'https://cdn.pixabay.com/video/2019/10/24/28236-368501609_tiny.mp4',
-  'Partly cloudy': 'https://cdn.pixabay.com/video/2021/02/11/17/29/partly-cloudy-6008138_960_720.mp4'
+  'Light drizzle': 'https://cdn.pixabay.com/video/2019/10/24/28236-368501609_tiny.mp4',
+  'Partly cloudy': 'https://cdn.pixabay.com/video/2021/02/11/17/29/partly-cloudy-6008138_960_720.mp4',
+  "Light rain shower": "https://cdn.pixabay.com/video/2017/07/20/10745-226632884_tiny.mp4",
+  'Patchy rain nearby': Patchylightdrizzle,
 };
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
   const [location, setLocation] = useState('');
   const [videoSource, setVideoSource] = useState('');
   const [videoKey, setVideoKey] = useState(0);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     AOS.init({
@@ -32,14 +35,18 @@ function App() {
   const fetchWeather = () => {
     let searchLocation = location || 'pune'; // Default location if none specified
     fetch(`https://api.weatherapi.com/v1/current.json?key=775607beac01499d9b9130530240205&q=${searchLocation}&aqi=no`)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new setNotFound(true)
+        }
+        return res.json();
+      })
       .then((result) => {
         setApiData(result);
         updateVideoSource(result.current.condition.text);
       })
       .catch((error) => {
-        console.error('Error fetching weather:', error);
-
+        // alert('Error fetching weather:', error);
       });
   };
 
@@ -58,6 +65,13 @@ function App() {
   const handleClick = () => {
     fetchWeather();
   };
+
+
+  // notFound && (
+  //   setTimeout(() => {
+  //     setNotFound(false);
+  //   }, 5000)
+  // )
 
   return (
     <div className=''>
@@ -83,6 +97,14 @@ function App() {
             />
             <FontAwesomeIcon icon={faSearch} className='fasearch fs-2 mt-1' role='button' onClick={handleClick} />
           </div>
+          {
+            notFound === true && (
+              <div className='error d-flex container-fluid  position-absolute z-1 text-capitalize bg-dark rounded-4 shadow-lg px-4 p-4 text-danger' data-aos-anchor-placement="center-center" data-aos="fade-down" data-aos-duration="1200">
+                <h2> <span>{location}</span> Not Found </h2>
+                <FontAwesomeIcon icon={faTimes}  className='position-absolute faTimes' onClick={()=>setNotFound(false)}/>
+              </div>
+            )
+          }
 
           {apiData && (
             <>
@@ -148,7 +170,7 @@ function App() {
 
                       <div className='card-body d-flex justify-content-between align-items-center'>
                         <FontAwesomeIcon icon={faFlag} className='fs-2' data-aos="fade-left" data-aos-duration="1200" />
-                        <h2 >{apiData.current.wind_dir}</h2>
+                        <h2>{apiData.current.wind_dir}</h2>
                       </div>
                     </div>
                   </div>

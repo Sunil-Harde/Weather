@@ -42,6 +42,22 @@ input{
   margin-left: 2.5rem;
 }
 
+.error{
+  top: 5.7rem;
+  max-width: 20rem;
+}
+
+/* .error span{
+  max-width: 2px;
+  color: black !important;
+} */
+
+.faTimes {
+  right: 1rem;
+  top:.5rem;
+  cursor: pointer;
+}
+
 .card {
   background: rgba(0, 0, 0, 0.548);
   backdrop-filter: blur(50px);
