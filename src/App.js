@@ -67,11 +67,11 @@ function App() {
   };
 
 
-  // notFound && (
-  //   setTimeout(() => {
-  //     setNotFound(false);
-  //   }, 5000)
-  // )
+  notFound && (
+    setTimeout(() => {
+      setNotFound(false);
+    }, 5000)
+  )
 
   return (
     <div className=''>
