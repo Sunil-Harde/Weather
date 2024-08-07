@@ -99,8 +99,8 @@ function App() {
           </div>
           {
             notFound === true && (
-              <div className='error d-flex container-fluid  position-absolute z-1 text-capitalize bg-dark rounded-4 shadow-lg px-4 p-4 text-danger' data-aos-anchor-placement="center-center" data-aos="fade-down" data-aos-duration="1200">
-                <h2> <span>{location}</span> Not Found </h2>
+              <div className='error d-flex container-fluid  position-absolute z-1 text-capitalize bg-dark rounded-4 shadow-lg px-4 p-4 text-danger' data-aos-anchor-placement="center-center" data-aos="fade-down" data-aos-duration="800">
+                <h2> <span>{location}</span> Not Exist </h2>
                 <FontAwesomeIcon icon={faTimes}  className='position-absolute faTimes' onClick={()=>setNotFound(false)}/>
               </div>
             )
