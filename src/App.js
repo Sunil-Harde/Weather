@@ -16,6 +16,7 @@ const weatherConditionVideos = {
   'Partly cloudy': 'https://cdn.pixabay.com/video/2021/02/11/17/29/partly-cloudy-6008138_960_720.mp4',
   "Light rain shower": "https://cdn.pixabay.com/video/2017/07/20/10745-226632884_tiny.mp4",
   'Patchy rain nearby': Patchylightdrizzle,
+  'Patchy light drizzle':"https://cdn.pixabay.com/video/2023/07/26/173291-849202438_tiny.mp4"
 };
 
 function App() {
@@ -100,7 +101,7 @@ function App() {
           {
             notFound === true && (
               <div className='error d-flex container-fluid  position-absolute z-1 text-capitalize bg-dark rounded-4 shadow-lg px-4 p-4 text-danger' data-aos-anchor-placement="center-center" data-aos="fade-down" data-aos-duration="800">
-                <h2> <span>{location}</span> Not Exist </h2>
+                <h2> <span>Location</span> Not Exist </h2>
                 <FontAwesomeIcon icon={faTimes}  className='position-absolute faTimes' onClick={()=>setNotFound(false)}/>
               </div>
             )
