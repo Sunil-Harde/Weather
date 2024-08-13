@@ -8,7 +8,7 @@ function Card({apiData}) {
     <>
         {apiData && (
             <>
-              <div className='card card1 m-2 mb-sm-0 mb-md-4 rounded-5' data-aos='fade-down' data-aos-easing='linear'>
+              <div className='card card1 m-2 mb-5 mb-md-4 rounded-5' data-aos='fade-down' data-aos-easing='linear'>
                 <div className='card-header'>
                   <div className='d-flex align-items-center'>
                     <FontAwesomeIcon icon={faLocation} className='fs-2' />
