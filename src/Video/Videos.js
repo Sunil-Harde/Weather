@@ -5,6 +5,7 @@ const weatherConditionVideos = {
     'Rainy': 'https://cdn.pixabay.com/video/2019/10/24/28236-368501609_large.mp4',
     'Light drizzle': 'https://cdn.pixabay.com/video/2019/10/24/28236-368501609_large.mp4',
     'Partly cloudy': 'https://cdn.pixabay.com/video/2024/03/29/206016_tiny.mp4',
+    'Partly Cloudy': 'https://cdn.pixabay.com/video/2024/03/29/206016_tiny.mp4',
     "Light rain shower": "https://cdn.pixabay.com/video/2024/05/30/214576_tiny.mp4",
     'Patchy rain nearby': "https://cdn.pixabay.com/video/2023/02/22/151744-801455851_tiny.mp4",
     'Light rain':"https://cdn.pixabay.com/video/2023/02/22/151744-801455851_tiny.mp4",
