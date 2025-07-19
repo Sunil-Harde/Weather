@@ -23,15 +23,12 @@ function Card({apiData}) {
                   <div className='col-6'>
                     <img src={apiData.current.condition.icon} alt='Weather Icon' className='ms-4 h-50 w-50' style={{ marginTop: '-1rem', marginBottom: '-2rem' }} />
                     <h2 className='ms-4 mt-5' style={{ marginBottom: '-1rem' }}>{apiData.current.condition.text}</h2>
-                    <h2 className='ms-4 mt-5' style={{ marginBottom: '-1rem' }}>{apiData.current.condition.text}</h2>
-                    <h2 className='ms-4 mt-5' style={{ marginBottom: '-1rem' }}>{apiData.current.condition.text}</h2>
                   </div>
                 </div>
 
                 <div className='card-footer'>
                   <div className='d-flex align-items-center'>
                     <FontAwesomeIcon icon={faClock} className='fs-2' />
-                    <h4 className='mt-2 ms-4'>{apiData.location.localtime}</h4>
                     <h4 className='mt-2 ms-4'>{apiData.location.localtime}</h4>
                   </div>
                 </div>
